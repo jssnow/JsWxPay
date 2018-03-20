@@ -1,5 +1,6 @@
 # JsWxPay
 控制器中代码为:
+```php
 <?php
 namespace app\wx\controller;
 
@@ -26,15 +27,17 @@ class WeController
         $input->SetTime_start(date("YmdHis"));
         $input->SetTime_expire(date("YmdHis", time() + 600));
         $input->SetGoods_tag("test");
-        $input->SetNotify_url("http://mobile.meiyuzhixing.com/wx/wepay/zf");
+        $input->SetNotify_url("你的项目域名/wx/wepay/zf");
         $input->SetTrade_type("JSAPI");
-        $input->SetOpenid(session('test.openid'));
+        $input->SetOpenid(session('openid'));//支付用户的openid,在进入支付页面时或者前面进行获取
         $order = WxPayApi::unifiedOrder($input);
         $jsApiParameters = $tools->GetJsApiParameters($order);
         echo $jsApiParameters;
     }
 }
+```
 
+```text
 html代码为:
 <html>
 <head>
@@ -94,4 +97,4 @@ html代码为:
 	</div>
 </body>
 </html>
-
+```
