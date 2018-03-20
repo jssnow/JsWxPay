@@ -1,4 +1,5 @@
-# JsWxPay ThinkPHP5 微信支付js调起扩展包()下载下来放在框架的extends目录下
+# JsWxPay ThinkPHP5 微信支付js调起扩展包
+## 把扩展包下载下来放在框架的extends目录下
 控制器中代码为:
 ```php
 <?php
